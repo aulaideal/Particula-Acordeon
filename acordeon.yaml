@@ -1,0 +1,90 @@
+name: Acordeón
+description: Muestra diferentes items con un diseño de acordeón.
+type: particle
+icon: fa-list
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Habilitado
+      description: Globally enable icon menu particles.
+      default: true
+
+    class:
+      type: input.selectize
+      label: Clase CSS
+      description: Clase CSS para la partícula.
+
+    title:
+      type: input.text
+      label: Título
+      description: Ingresa el Título de la parttícula.
+      placeholder: Ingrese un Título.
+
+    estilo:
+      type: select.select
+      label: Estilo
+      description: Elije el estilo del acordeon que mas te agrade.
+      default: estilo1
+      options:
+        estilo1: Estilo 1
+        estilo2: Estilo 2
+
+    velocidad:
+      type: input.text
+      label: Velocidad
+      description: Defina en milisegundos la velocidad de la animación.
+      placeholder: 300
+      default: 300
+
+    primeroabierto:
+      type: input.checkbox
+      label: ¿1er item desplegado?
+      description: Habilite esta opcion si desea que por defecto el primero acordeón se muestre desplegado.
+      default: true
+
+    items:
+      type: collection.list
+      array: true
+      label: Lista de acordeones
+      description: Crée los items de cada acordeón.
+      value: title
+      ajax: true
+      fields:
+        .title:
+          type: input.text
+          label: Título
+          description: Ingresa el Título del acordeón.
+          placeholder: Título del acordeón.
+
+        .desc:
+          type: textarea.textarea
+          label: Descripción
+          description: Ingrese el contenido del acordeón.
+          placeholder: Contenido del acordeón
+
+        .buttontext:
+          type: input.text
+          label: Texto del botón.
+          description: Ingrese el texto del botón.
+
+        .buttonlink:
+          type: input.text
+          label: Enlace del botón
+          description: Ingrese el enlace del botón. 
+
+        .buttontarget:
+          type: select.selectize
+          label: Target
+          description: ¿El enlace se abrirá en la misma página o en una nueva?
+          placeholder: 'Seleccionar'
+          default: _self
+          options:
+              _self: Misma ventana
+              _blank: Nueva ventana
+
+        .buttonclass:
+          type: input.selectize
+          label: Clase CSS del botón
+          description: ingrese el nombre de la clase CSS para el botón.
