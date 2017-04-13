@@ -3,6 +3,10 @@ description: Muestra diferentes items con un diseño de acordeón.
 type: particle
 icon: fa-list
 
+configuration:
+  caching:
+    type: static
+
 form:
   fields:
     enabled:
