@@ -1,6 +1,8 @@
 # Partícula "Acordeon"
 Partícula para Gantry 5 que te permite mostrar diferentes items con un diseño de acordeón. Muy usado en sitios web modernos. 
 
+![particula-acordeon](https://user-images.githubusercontent.com/9434043/26899269-3d16021e-4b94-11e7-90c9-1a8c78129fb9.png)
+
 Instalación
 -----------
 No hemos incluido un instalador ya que deseamos que esta partícula pueda ser usada tanto en Joomla como en Wordpress. 
