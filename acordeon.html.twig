@@ -8,16 +8,19 @@
 
 
 <div class="{{ particle.class|e }}">
-  {% if particle.title %}<h2 class="g-title">{{ particle.title|raw }}</h2>{% endif %}
+  {% if particle.tituloprincipal %}
+        <{{ particle.etiquetatitulo }} class="g-cualidades-titulo">{{ particle.tituloprincipal|raw }}</{{ particle.etiquetatitulo }}>
+    {% endif %}
   <ul class="accordion {{ particle.estilo|raw }}" id="{{ id }}">
     {% for item in particle.items %}
     <li id="accordion-id{{ loop.index }}">
       <div class="accordion-item-title">{{ item.title }} <div class="toggle"><i class="fa fa-plus"></i></div></div>
       <div class="accordion-item-content">
-        {{ item.desc }}
-        {% if item.buttontext %}
-        <br /><br />
-        <span class="accor-button"> <a target="{{ item.buttontarget|default('_self')|e }}" href="{{ item.buttonlink|e }}" title="{{ item.buttontext|e }}" class="button {{ item.buttonclass|e }}">{{ item.buttontext|e }}</a> </span>
+        {{ item.desc|raw }}
+        {% if item.buttontext %}      
+        <span class="accor-button">
+        <a target="{{ item.buttontarget|default('_self')|e }}" href="{{ item.buttonlink|e }}" title="{{ item.buttontext|e }}" class="btn {% if particle.estiloboton %}{{ particle.estiloboton }}{% endif %}">{{ item.buttontext|e }}
+        </a></span>
         {% endif %}
       </div>
     </li>

@@ -3,10 +3,6 @@ description: Muestra diferentes items con un diseño de acordeón.
 type: particle
 icon: fa-list
 
-configuration:
-  caching:
-    type: static
-
 form:
   fields:
     enabled:
@@ -15,16 +11,27 @@ form:
       description: Globally enable icon menu particles.
       default: true
 
-    class:
-      type: input.selectize
-      label: Clase CSS
-      description: Clase CSS para la partícula.
 
-    title:
+
+    tituloprincipal:
       type: input.text
-      label: Título
-      description: Ingresa el Título de la parttícula.
-      placeholder: Ingrese un Título.
+      label: Título General
+      description: Escribe el título general de la partícula
+      placeholder: 'Ingrese el título'
+
+    etiquetatitulo:
+      type: select.select
+      label: Etiqueta del título
+      description: Defina Etiqueta del título general.
+      placeholder: 'Seleccionar'
+      default: h2  
+      options:
+        h1: H1
+        h2: H2
+        h3: H3
+        h4: H4
+        h5: H5
+        h6: H6
 
     estilo:
       type: select.select
@@ -47,6 +54,27 @@ form:
       label: ¿1er item desplegado?
       description: Habilite esta opcion si desea que por defecto el primero acordeón se muestre desplegado.
       default: true
+
+    estiloboton:
+      type: select.select
+      label: Estilo del botón
+      description: Elija el Estilo del botón.
+      placeholder: 'Seleccionar...'
+      default: btn-primary
+      options:
+        btn-default: btn-default
+        btn-primary: btn-primary 
+        btn-success: btn-success            
+        btn-info: btn-info
+        btn-warning: btn-warning
+        btn-danger: btn-danger            
+        btn-inverse : btn-inverse 
+        btn-link: btn-link      
+    
+    class:
+      type: input.selectize
+      label: Clase CSS
+      description: Clase CSS para la partícula.      
 
     items:
       type: collection.list
@@ -88,7 +116,3 @@ form:
               _self: Misma ventana
               _blank: Nueva ventana
 
-        .buttonclass:
-          type: input.selectize
-          label: Clase CSS del botón
-          description: ingrese el nombre de la clase CSS para el botón.
