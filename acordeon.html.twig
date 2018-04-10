@@ -12,12 +12,17 @@
   {% if particle.tituloprincipal %}
         <{{ particle.etiquetatitulo }} class="g-cualidades-titulo">{{ particle.tituloprincipal|raw }}</{{ particle.etiquetatitulo }}>
     {% endif %}
-  <ul class="accordion {{ particle.estilo|raw }}" id="{{ id }}">
+  <ul class="accordion" id="{{ id }}">
     {% for item in particle.items %}
     <li id="accordion-id{{ loop.index }}">
-      <div class="accordion-item-title">{{ item.title }} <div class="toggle"><i class="fa fa-plus"></i></div></div>
+      <div class="accordion-item-title" style="background:{{ particle.colorfondo|e }}; color:{{ particle.colortitulo|e }}; {% if particle.espaciadotitulo %} padding:{{ particle.espaciadotitulo|e }}; {% endif %}">{{ item.tituloitem }} <div class="toggle" style="color:{{ particle.colorfondo|e }}"><i class="fa fa-plus"></i></div></div>
       <div class="accordion-item-content">
-        {{ item.desc|raw }}
+        
+         {% if item.desc %}
+          <div class="accordion-desc" style="color:{{ particle.colortexto|e }}">{{ item.desc|raw }}</div>
+         {% endif %}
+
+
         {% if item.buttontext %}      
         <span class="accor-button">
         <a target="{{ item.buttontarget|default('_self')|e }}" href="{{ item.buttonlink|e }}" title="{{ item.buttontext|e }}" class="btn {% if particle.estiloboton %}{{ particle.estiloboton }}{% endif %}">{{ item.buttontext|e }}

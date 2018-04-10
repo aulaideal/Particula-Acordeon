@@ -13,6 +13,11 @@ form:
 
 
 
+    Separador1:
+      type: separator.note
+      class: alert alert-success
+      content: '<h4>Configuración general</h4>'
+
     tituloprincipal:
       type: input.text
       label: Título General
@@ -33,14 +38,6 @@ form:
         h5: H5
         h6: H6
 
-    estilo:
-      type: select.select
-      label: Estilo
-      description: Elije el estilo del acordeon que mas te agrade.
-      default: estilo1
-      options:
-        estilo1: Estilo 1
-        estilo2: Estilo 2
 
     velocidad:
       type: input.text
@@ -55,6 +52,48 @@ form:
       description: Habilite esta opcion si desea que por defecto el primero acordeón se muestre desplegado.
       default: true
 
+    Separador2:
+      type: separator.note
+      class: alert alert-success
+      content: '<h4>Configuración del Título</h4>'
+
+    colorfondo:
+      type: input.colorpicker
+      label: Fondo del título
+      description: 'Defina un color de fondo para los títulos.'
+      default: '#384146'
+
+    colortitulo:
+      type: input.colorpicker
+      label: Color del título
+      description: 'Defina un color del texto para los títulos.'
+      default: '#fff'
+
+    espaciadotitulo:
+      type: input.text
+      label: Espaciado
+      description: Defina el espaciado interno de los título.
+      placeholder: 1rem
+
+
+
+
+    Separador3:
+      type: separator.note
+      class: alert alert-success
+      content: '<h4>Configuración del contenido</h4>'
+
+    colortexto:
+      type: input.colorpicker
+      label: Color del texto
+      description: 'Defina un color del texto del contenido.'
+      default: '#384146'
+
+
+    Separador4:
+      type: separator.note
+      class: alert alert-success
+      content: '<h4>Configuración del botón</h4>'
     estiloboton:
       type: select.select
       label: Estilo del botón
@@ -84,11 +123,12 @@ form:
       value: title
       ajax: true
       fields:
-        .title:
+
+        tituloitem:
           type: input.text
           label: Título
-          description: Ingresa el Título del acordeón.
-          placeholder: Título del acordeón.
+          description: Ingresa el Título del item.
+          placeholder: Título del item.
 
         .desc:
           type: textarea.textarea
